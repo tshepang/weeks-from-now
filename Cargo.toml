@@ -1,0 +1,14 @@
+[package]
+name = "weeks-from-now"
+version = "0.1.0"
+description = "Show a date x weeks from now"
+repository = "https://github.com/tshepang/weeks-from-now"
+license = "MIT"
+readme = "README"
+categories = ["command-line-utilities", "date-and-time"]
+authors = ["Tshepang Lekhonkhobe <tshepang@gmail.com>"]
+
+[dependencies]
+chrono = "0.4.0"
+structopt = "0.1"
+structopt-derive = "0.1"
