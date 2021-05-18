@@ -1,5 +1,6 @@
 # weeks-from-now
 
+[![crates.io](https://img.shields.io/crates/v/weeks-from-now.svg)](https://crates.io/crates/weeks-from-now)
 [![build status](https://github.com/tshepang/weeks-from-now/workflows/CI/badge.svg)](https://github.com/tshepang/weeks-from-now/actions)
 
 You may want to know date of 6 weeks from now:
