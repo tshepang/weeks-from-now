@@ -18,4 +18,4 @@ Following is the most easy way to install the tool
     cargo install weeks-from-now
 
 
-[install]: https://www.rust-lang.org/en-US/install.html
+[install]: https://rust-lang.org/tools/install
