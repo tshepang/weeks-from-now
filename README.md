@@ -1,6 +1,6 @@
 # weeks-from-now
 
-[![Linux build status](https://travis-ci.org/tshepang/weeks-from-now.svg?branch=master)](https://travis-ci.org/tshepang/weeks-from-now)
+[![build status](https://github.com/tshepang/weeks-from-now/workflows/CI/badge.svg)](https://github.com/tshepang/weeks-from-now/actions)
 
 You may want to know date of 6 weeks from now:
 
