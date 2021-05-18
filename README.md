@@ -18,7 +18,7 @@ Following is the most easy way to install the tool
 
     cargo install weeks-from-now
 
-NOTE: minimum required rustc is v1.38,
-due to being compatible with new Cargo.lock format.
+NOTE: minimum required rustc is v1.40,
+due to prior Windows toolchain versions failing to run on Github Actions.
 
 [install]: https://rust-lang.org/tools/install
