@@ -1,12 +1,13 @@
 use chrono::{Duration, Local};
 use structopt::StructOpt;
 
+/// Date of x weeks from now
 #[derive(StructOpt)]
-#[structopt(about = "Date of x weeks from now")]
 struct Opt {
-    #[structopt(help = "Number of weeks")]
+    /// Number of weeks
     count: i64,
-    #[structopt(long = "past", help = "Count backwards")]
+    /// Count backwards
+    #[structopt(long)]
     past: bool,
 }
 
