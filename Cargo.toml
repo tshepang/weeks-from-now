@@ -7,6 +7,7 @@ license = "MIT"
 readme = "README.md"
 categories = ["command-line-utilities", "date-and-time"]
 authors = ["Tshepang Lekhonkhobe <tshepang@gmail.com>"]
+edition = "2018"
 
 [dependencies]
 chrono = "0.4.0"

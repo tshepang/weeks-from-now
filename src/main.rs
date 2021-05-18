@@ -1,6 +1,6 @@
-extern crate chrono;
-extern crate structopt;
-#[macro_use] extern crate structopt_derive;
+use structopt;
+#[macro_use]
+extern crate structopt_derive;
 
 use chrono::{Duration, Local};
 use structopt::StructOpt;
