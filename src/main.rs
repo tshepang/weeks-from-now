@@ -2,7 +2,7 @@ use chrono::{Duration, Local};
 use structopt::StructOpt;
 
 #[derive(StructOpt)]
-#[structopt(name = "weeks-from-now", about = "Date of x weeks from now")]
+#[structopt(about = "Date of x weeks from now")]
 struct Opt {
     #[structopt(help = "Number of weeks")]
     count: i64,
