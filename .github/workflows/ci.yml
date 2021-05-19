@@ -20,6 +20,7 @@ jobs:
           - macOS-latest
     steps:
     - uses: actions/checkout@v2
+    # TODO: remove this when MSRV is v1.40+
     - name: Update rustup (to avoid "memory allocation of 16777216 bytes failed")
       if: ${{ matrix.os == 'windows-latest' }}
       run: rustup self update
