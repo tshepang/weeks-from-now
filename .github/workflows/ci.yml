@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         rust:
-          - "1.40"
+          - 1.38
           - stable
           - beta
           - nightly
@@ -20,6 +20,9 @@ jobs:
           - macOS-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Update rustup (to avoid "memory allocation of 16777216 bytes failed")
+      if: ${{ matrix.os == 'windows-latest' }}
+      run: rustup self update
     - name: Install ${{ matrix.rust }}
       uses: actions-rs/toolchain@v1
       with:
