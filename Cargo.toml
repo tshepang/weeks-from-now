@@ -11,4 +11,9 @@ edition = "2018"
 
 [dependencies]
 chrono = "0.4"
-structopt = "0.3"
+
+[dependencies.clap]
+version = "3"
+features = [
+  "derive",
+]

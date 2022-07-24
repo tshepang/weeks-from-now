@@ -1,19 +1,20 @@
 use chrono::{Duration, Local};
-use structopt::StructOpt;
+use clap::Parser;
 
 /// Date of x weeks from now
-#[derive(StructOpt)]
+#[derive(Parser)]
+#[clap(version)]
 struct Opt {
     /// Number of weeks
     count: i64,
     /// Count backwards
-    #[structopt(long)]
+    #[clap(long)]
     past: bool,
 }
 
 fn main() {
     let today = Local::today().naive_local();
-    let opt = Opt::from_args();
+    let opt = Opt::parse();
     let date = if opt.past {
         today.checked_sub_signed(Duration::weeks(opt.count))
     } else {
