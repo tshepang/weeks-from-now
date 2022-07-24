@@ -6,7 +6,7 @@ repository = "https://github.com/tshepang/weeks-from-now"
 license = "MIT"
 readme = "README.md"
 categories = ["command-line-utilities", "date-and-time"]
-authors = ["Tshepang Lekhonkhobe <tshepang@gmail.com>"]
+authors = ["Tshepang Mbambo <tshepang@gmail.com>"]
 edition = "2018"
 
 [dependencies]
