@@ -11,28 +11,23 @@ jobs:
         rust:
           - 1.57
           - stable
-          - beta
-          - nightly
+        # https://github.com/actions/virtual-environments#available-environments
         os:
-          - ubuntu-18.04
-          - ubuntu-20.04
+          - ubuntu-latest
           - windows-latest
           - macOS-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Install ${{ matrix.rust }}
-      uses: actions-rs/toolchain@v1
-      with:
+      - uses: actions/checkout@v3
+      - name: install ${{ matrix.rust }} toolchain
+        uses: dtolnay/rust-toolchain@master
+        with:
           toolchain: ${{ matrix.rust }}
-          override: true
-    - name: Build
-      uses: actions-rs/cargo@v1
-      with:
-        command: build
+      - name: build
+        run: cargo build
   security-audit:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions-rs/audit-check@v1.2.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+      - uses: actions-rs/audit-check@v1.2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
