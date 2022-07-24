@@ -1,6 +1,6 @@
 [package]
 name = "weeks-from-now"
-version = "0.1.2"
+version = "0.1.3"
 description = "Show a date x weeks from now"
 repository = "https://github.com/tshepang/weeks-from-now"
 license = "MIT"
