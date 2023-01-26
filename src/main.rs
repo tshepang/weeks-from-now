@@ -21,7 +21,7 @@ fn main() {
         today.checked_add_signed(Duration::weeks(opt.count))
     };
     match date {
-        Some(date) => println!("{}", date),
+        Some(date) => println!("{date}"),
         None => eprintln!("Date not representable... overflow!"),
     };
 }
