@@ -13,7 +13,7 @@ struct Opt {
 }
 
 fn main() {
-    let today = Local::today().naive_local();
+    let today = Local::now().date_naive();
     let opt = Opt::parse();
     let date = if opt.past {
         today.checked_sub_signed(Duration::weeks(opt.count))
