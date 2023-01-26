@@ -3,12 +3,12 @@ use clap::Parser;
 
 /// Date of x weeks from now
 #[derive(Parser)]
-#[clap(version)]
+#[command(version)]
 struct Opt {
     /// Number of weeks
     count: i64,
     /// Count backwards
-    #[clap(long)]
+    #[arg(long)]
     past: bool,
 }
 
