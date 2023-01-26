@@ -3,7 +3,7 @@ use clap::Parser;
 
 #[derive(Parser)]
 #[command(about, version)]
-struct Opt {
+struct Cli {
     /// Number of weeks
     count: i64,
     /// Count backwards
@@ -13,11 +13,11 @@ struct Opt {
 
 fn main() {
     let today = Local::now().date_naive();
-    let opt = Opt::parse();
-    let date = if opt.past {
-        today.checked_sub_signed(Duration::weeks(opt.count))
+    let cli = Cli::parse();
+    let date = if cli.past {
+        today.checked_sub_signed(Duration::weeks(cli.count))
     } else {
-        today.checked_add_signed(Duration::weeks(opt.count))
+        today.checked_add_signed(Duration::weeks(cli.count))
     };
     match date {
         Some(date) => println!("{date}"),
