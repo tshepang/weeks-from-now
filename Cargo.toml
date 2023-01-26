@@ -8,12 +8,13 @@ readme = "README.md"
 categories = ["command-line-utilities", "date-and-time"]
 authors = ["Tshepang Mbambo <tshepang@gmail.com>"]
 edition = "2018"
+rust-version = "1.64"
 
 [dependencies]
 chrono = "0.4"
 
 [dependencies.clap]
-version = "3"
+version = "4"
 features = [
   "derive",
 ]
