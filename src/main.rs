@@ -1,9 +1,8 @@
 use chrono::{Duration, Local};
 use clap::Parser;
 
-/// Date of x weeks from now
 #[derive(Parser)]
-#[command(version)]
+#[command(about, version)]
 struct Opt {
     /// Number of weeks
     count: i64,
