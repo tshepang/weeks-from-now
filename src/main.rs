@@ -12,8 +12,8 @@ struct Cli {
 }
 
 fn main() {
-    let today = Local::now().date_naive();
     let cli = Cli::parse();
+    let today = Local::now().date_naive();
     let date = if cli.past {
         today.checked_sub_signed(Duration::weeks(cli.count))
     } else {
