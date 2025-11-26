@@ -1,6 +1,6 @@
 use clap::Parser;
-use jiff::Timestamp;
 use jiff::ToSpan;
+use jiff::Zoned;
 
 #[derive(Parser)]
 #[command(about, version)]
@@ -14,7 +14,7 @@ struct Cli {
 
 fn main() {
     let cli = Cli::parse();
-    let now = Timestamp::now();
+    let now = Zoned::now();
     let date = if cli.past {
         now.checked_sub((24 * 7).hours() * cli.count)
     } else {
