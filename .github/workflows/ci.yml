@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         rust:
-          - 1.64
+          - 1.66
           - stable
         # https://github.com/actions/virtual-environments#available-environments
         os:

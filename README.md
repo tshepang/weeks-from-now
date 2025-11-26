@@ -18,7 +18,7 @@ Following is the most easy way to install the tool
 
     cargo install weeks-from-now
 
-NOTE: minimum required rustc is v1.64, [due to clap].
+NOTE: minimum required rustc is v1.66, [due to anstream] (which clap depends on).
 
 [install]: https://rust-lang.org/tools/install
-[due to clap]: https://github.com/clap-rs/clap/pull/4615
+[due to anstream]: https://github.com/rust-cli/anstyle/pull/217
