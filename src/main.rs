@@ -1,11 +1,12 @@
-use chrono::{Duration, Local};
 use clap::Parser;
+use jiff::Timestamp;
+use std::time::Duration;
 
 #[derive(Parser)]
 #[command(about, version)]
 struct Cli {
     /// Number of weeks
-    count: i64,
+    count: u64,
     /// Count backwards
     #[arg(long)]
     past: bool,
@@ -13,14 +14,14 @@ struct Cli {
 
 fn main() {
     let cli = Cli::parse();
-    let today = Local::now().date_naive();
+    let now = Timestamp::now();
     let date = if cli.past {
-        today.checked_sub_signed(Duration::weeks(cli.count))
+        now.checked_sub(Duration::from_hours(24 * 7 * cli.count))
     } else {
-        today.checked_add_signed(Duration::weeks(cli.count))
+        now.checked_add(Duration::from_hours(24 * 7 * cli.count))
     };
     match date {
-        Some(date) => println!("{date}"),
-        None => eprintln!("Date not representable... overflow!"),
+        Ok(date) => println!("{}", date.strftime("%F")),
+        Err(why) => eprintln!("Date not representable: {why}!"),
     };
 }

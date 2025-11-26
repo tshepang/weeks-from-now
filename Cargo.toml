@@ -9,7 +9,7 @@ edition = "2021"
 rust-version = "1.74"
 
 [dependencies]
-chrono = "0.4"
+jiff = "0.2"
 
 [dependencies.clap]
 version = "4"
