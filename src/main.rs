@@ -23,5 +23,5 @@ fn main() {
     match date {
         Ok(date) => println!("{}", date.strftime("%F")),
         Err(why) => eprintln!("Date not representable: {why}!"),
-    };
+    }
 }
