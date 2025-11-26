@@ -1,12 +1,12 @@
 use clap::Parser;
 use jiff::Timestamp;
-use std::time::Duration;
+use jiff::ToSpan;
 
 #[derive(Parser)]
 #[command(about, version)]
 struct Cli {
     /// Number of weeks
-    count: u64,
+    count: i64,
     /// Count backwards
     #[arg(long)]
     past: bool,
@@ -16,9 +16,9 @@ fn main() {
     let cli = Cli::parse();
     let now = Timestamp::now();
     let date = if cli.past {
-        now.checked_sub(Duration::from_hours(24 * 7 * cli.count))
+        now.checked_sub((24 * 7).hours() * cli.count)
     } else {
-        now.checked_add(Duration::from_hours(24 * 7 * cli.count))
+        now.checked_add((24 * 7).hours() * cli.count)
     };
     match date {
         Ok(date) => println!("{}", date.strftime("%F")),
