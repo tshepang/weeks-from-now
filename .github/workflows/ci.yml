@@ -17,11 +17,9 @@ jobs:
           - windows-latest
           - macOS-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - name: install ${{ matrix.rust }} toolchain
-        uses: dtolnay/rust-toolchain@master
-        with:
-          toolchain: ${{ matrix.rust }}
+        run: rustup update ${{ matrix.rust }} && rustup default ${{ matrix.rust }}
       - name: build
         run: cargo build
   security-audit:
