@@ -5,7 +5,6 @@ description = "Show a date x weeks from now"
 repository = "https://github.com/tshepang/weeks-from-now"
 license = "MIT OR Apache-2.0"
 categories = ["command-line-utilities", "date-and-time"]
-authors = ["Tshepang Mbambo <tshepang@gmail.com>"]
 edition = "2021"
 rust-version = "1.74"
 
