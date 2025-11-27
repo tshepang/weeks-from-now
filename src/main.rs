@@ -16,12 +16,9 @@ fn main() {
     let cli = Cli::parse();
     let now = Zoned::now();
     let date = if cli.past {
-        now.checked_sub((24 * 7).hours() * cli.count)
+        now - cli.count.week()
     } else {
-        now.checked_add((24 * 7).hours() * cli.count)
+        now + cli.count.week()
     };
-    match date {
-        Ok(date) => println!("{}", date.strftime("%F")),
-        Err(why) => eprintln!("Date not representable: {why}!"),
-    }
+    println!("{}", date.strftime("%F"));
 }
