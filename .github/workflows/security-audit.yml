@@ -4,6 +4,8 @@ on:
     paths:
       - '**/Cargo.toml'
       - '**/Cargo.lock'
+env:
+  CARGO_TERM_COLOR: always
 jobs:
   security-audit:
     runs-on: ubuntu-latest
